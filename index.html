@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .personal-statement {
+            font-size: 1.25k;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Skills Styling */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills-list li {
+            background: var(--bg-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Styling */
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-links {
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <!-- Requirement 1: Personal Statement (One clear, impactful sentence) -->
+        <p class="personal-statement">An innovative aspiring software developer passionate about building user-centric web applications and solving real-world problems through clean code.</p>
+    </header>
+
+    <main>
+        <!-- Requirement 2: Skills Section -->
+        <section>
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Git & GitHub</li>
+                <li>Responsive Design</li>
+                <li>Problem Solving</li>
+                <li>Team Collaboration</li>
+            </ul>
+        </section>
+
+        <!-- Requirement 3: Projects Section -->
+        <section>
+            <h2>Projects</h2>
+
+            <div class="project-card">
+                <h3>Project One: Task Tracker App</h3>
+                <p>A lightweight web application built to help users organize daily tasks, set priorities, and track task completion status locally in their browser.</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourusername/task-tracker" target="_blank">View Code</a>
+                    <a href="https://yourusername.github.io/task-tracker" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Two: Weather Dashboard</h3>
+                <p>An interactive weather lookup tool that fetches real-time meteorological data from a public API and presents current conditions and 5-day forecasts.</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourusername/weather-dashboard" target="_blank">View Code</a>
+                    <a href="https://yourusername.github.io/weather-dashboard" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Three: Personal Blog Layout</h3>
+                <p>A responsive multi-page blog layout designed using modern CSS Flexbox and Grid, optimized for readability across mobile and desktop devices.</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourusername/personal-blog" target="_blank">View Code</a>
+                    <a href="https://yourusername.github.io/personal-blog" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Your Name. Built for GitHub Pages.</p>
+    </body>
+</html>
