@@ -6,17 +6,19 @@
     <title>Maura O'Hare - Personal Portfolio</title>
     <style>
         :root {
-            --primary-color: #cc0033; /* Rutgers scarlet accent */
-            --bg-color: #f8fafc;
+            --primary: #cc0033; /* Rutgers Scarlet */
+            --primary-dark: #990026;
+            --bg-gradient: linear-gradient(135deg, #fdf2f4 0%, #f8fafc 100%);
             --card-bg: #ffffff;
-            --text-color: #1e293b;
+            --text-main: #1e293b;
             --text-muted: #64748b;
+            --border-color: #f1f5f9;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background: var(--bg-gradient);
+            color: var(--text-main);
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -24,118 +26,184 @@
 
         header {
             background: var(--card-bg);
-            border-bottom: 1px solid #e2e8f0;
-            padding: 2.5rem 1rem;
+            border-bottom: 2px solid #fee2e2;
+            padding: 3rem 1rem 2.5rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(204, 0, 51, 0.05);
+        }
+
+        .profile-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1.25rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(204, 0, 51, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-container:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         header h1 {
             margin: 0 0 0.5rem 0;
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 2.75rem;
+            color: var(--primary);
+            letter-spacing: -0.025em;
         }
 
         .personal-statement {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 850px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
         }
 
         section {
             background: var(--card-bg);
-            border-radius: 8px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.25rem;
             margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
         }
 
         h2 {
             margin-top: 0;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 0.5rem;
-            color: var(--primary-color);
+            font-size: 1.5rem;
+            border-bottom: 2px solid #fee2e2;
+            padding-bottom: 0.75rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         /* Skills Styling */
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.6rem;
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
         .skills-list li {
-            background: var(--bg-color);
-            color: var(--primary-color);
+            background: #fff1f2;
+            color: var(--primary);
             padding: 0.5rem 1rem;
-            border-radius: 4px;
+            border-radius: 9999px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            border: 1px solid #fecdd3;
+            transition: all 0.2s;
+        }
+
+        .skills-list li:hover {
+            background: var(--primary);
+            color: #ffffff;
+            cursor: default;
         }
 
         /* Projects Styling */
         .project-card {
+            background: #fafafa;
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.25rem;
-            transition: transform 0.2s;
+            transition: all 0.2s ease;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
         }
 
         .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-color: #fbcfe8;
+            box-shadow: 0 4px 12px rgba(204, 0, 51, 0.08);
+            background: #ffffff;
         }
 
         .project-card h3 {
             margin-top: 0;
             margin-bottom: 0.5rem;
+            color: #0f172a;
+            font-size: 1.25rem;
         }
 
-        .project-links {
-            margin-top: 1rem;
+        .project-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
         }
 
         .project-links a {
-            display: inline-block;
-            background-color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary);
             color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 0.55rem 1.25rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: opacity 0.2s;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 6px -1px rgba(204, 0, 51, 0.2);
+            transition: background-color 0.2s, transform 0.1s;
         }
 
         .project-links a:hover {
-            opacity: 0.9;
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             color: var(--text-muted);
             font-size: 0.875rem;
+            border-top: 1px solid #e2e8f0;
+            background: var(--card-bg);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 2.2rem; }
+            section { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- Profile Picture added here -->
+        <div class="profile-container">
+            <img src="image1.jpeg" alt="Maura O'Hare" class="profile-img">
+        </div>
         <h1>Maura O'Hare</h1>
         <!-- Requirement 1: Personal Statement -->
-        <p class="personal-statement">A dedicated marketing student at Rutgers Business School leveraging analytical skills and strategic vision to drive brand engagement and operational efficiency[cite: 1, 2].</p>
+        <p class="personal-statement">A dedicated marketing student at Rutgers Business School leveraging analytical skills and strategic vision to drive brand engagement and operational efficiency.</p>
     </header>
 
     <main>
@@ -143,14 +211,14 @@
         <section>
             <h2>Skills</h2>
             <ul class="skills-list">
-                <li>Problem-Solving[cite: 2]</li>
-                <li>Proposals[cite: 2]</li>
-                <li>Visual Design[cite: 2]</li>
-                <li>Data Analysis[cite: 2]</li>
-                <li>Brand Analysis[cite: 2]</li>
-                <li>Attention to Detail[cite: 2]</li>
-                <li>Adaptability & Resilience[cite: 2]</li>
-                <li>Design[cite: 2]</li>
+                <li>Problem-Solving</li>
+                <li>Proposals</li>
+                <li>Visual Design</li>
+                <li>Data Analysis</li>
+                <li>Brand Analysis</li>
+                <li>Attention to Detail</li>
+                <li>Adaptability & Resilience</li>
+                <li>Design</li>
             </ul>
         </section>
 
@@ -160,32 +228,33 @@
 
             <div class="project-card">
                 <h3>SecureTag Marketing Strategy Project</h3>
-                <p>Developed pricing and promotional strategies for a smart-tracking device, building a comprehensive marketing plan targeting consumers and businesses across digital platforms[cite: 2].</p>
+                <p>Developed pricing and promotional strategies for a smart-tracking device, building a comprehensive marketing plan targeting consumers and businesses across digital platforms.</p>
                 <div class="project-links">
-                    <a href="Intro to Marketing Team Project.pptx (2).pdf" target="_blank">Live Demo</a>
+                    <a href="securetag.pdf" target="_blank">Live Demo &rarr;</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <h3>Organizational Efficiency Analysis (Wells Fargo)</h3>
-                <p>Conducted structured interviews and built quantitative performance metrics to evaluate workflow breakdowns and propose timeline-adjustment models for corporate technology projects[cite: 2].</p>
+                <p>Conducted structured interviews and built quantitative performance metrics to evaluate workflow breakdowns and propose timeline-adjustment models for corporate technology projects.</p>
                 <div class="project-links">
-                    <a href="Team 4.pdf" target="_blank">Live Demo</a>
+                    <a href="wellsfargo.pdf" target="_blank">Live Demo &rarr;</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <h3>ScarletMart Business Strategy & Operations</h3>
-                <p>Designed comprehensive business concepts, financial/strategic objectives, operational frameworks (SIPOC), and expansion models for a 24/7 student convenience retail project[cite: 27, 30, 31, 32, 41].</p>
+                <p>Designed comprehensive business concepts, financial/strategic objectives, operational frameworks (SIPOC), and expansion models for a 24/7 student convenience retail project.</p>
                 <div class="project-links">
-                    <a href="Copy of Final Presentation.pdf" target="_blank">Live Demo</a>
+                    <a href="scarletmart.pdf" target="_blank">Live Demo &rarr;</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Maura O'Hare. Built for GitHub Pages.</p>
+        <p>&copy; 2026 Maura O'Hare. Built with GitHub Pages & Rutgers Pride.</p>
     </footer>
 </body>
 </html>
+   
